@@ -10,7 +10,7 @@
 body{
     width: 100%;
     background-color: green;
-    /* height: 100vh; */
+    height: 100vh;
 }
 .container {
     width: 100%;
@@ -23,10 +23,7 @@ body{
 }
 
 .inner {
-    margin-left: 1%;
-    width: 100%;
-
-    
+    width: 100%;  
 }
 
 .navigation {
@@ -34,7 +31,8 @@ body{
     background-color: transparent;
     width: 100%;
     position: fixed;
-    justify-content: space-between;
+    justify-content:space-between;
+    /* border: 2px solid white; */
     overflow: hidden;
 }
 
@@ -47,8 +45,7 @@ body{
 }
 
 .flex {
-    display: flex;
-    
+    display: flex;   
 }
 
 .fa1 {
@@ -93,12 +90,14 @@ body{
     padding-top: 80px;
 }
 .banner h1{
+    margin-left: 1%;
     font-size: 5rem;
     background: linear-gradient(to right,rgb(243, 57, 88),yellow);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 .banner h3{
+    margin-left: 1%;
     font-size: 2rem;   
     margin-top: 20px;
     font-weight: 300px;
@@ -106,6 +105,7 @@ body{
     letter-spacing: 3px;
 }
 .banner-buttons{
+    margin-left: 1%;
 margin-top: 4px;
 display: inline-block;
 }
@@ -130,6 +130,7 @@ display: inline-block;
     margin-right: 4px;
 }
 .para{
+    margin-left: 1%;
     width: 30%;
     color: rgb(222, 222, 222);
     margin-top: 10px;
@@ -148,6 +149,8 @@ display: inline-block;
     top: 0;
 }
 .video-container video{
+    min-width: 710px;
+    min-height: 560px;
     width: 100%;
     height: 100vh;
     object-fit: cover;
@@ -155,6 +158,8 @@ display: inline-block;
 .overlay{
     width: 100%;
     height: 100vh;
+    min-width: 710px;
+    min-height: 560px;
     background-color: #000;
     position: absolute;
     top: 0;
@@ -165,33 +170,44 @@ display: inline-block;
     visibility: hidden;
 } */
 .carousel{
-    margin-top: calc(7%);
+    /* margin-top: calc(1%); */
 }
 .carousel-slider{
-position: relative;
-width: 100vw;
+    position: relative;
+    width: 100%;
 
 }
+
 
 .carousel-list{
     display: flex;
-position: relative;
-width: 100vw;
+    position: relative;
+    width: 100%;
 
 }
+.carousel-list img{
+    width: 400px;
+    height: 150px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.carousel-list img:hover{
+    scale: 1.5;
+    transition: 1s;
+}
 
-.carousel-list div{
+/* .carousel-list div{
     width: 25%;
     position: absolute;
-    /* bottom: 0; */
-}
-.carousel-item img{
+    bottom: 0;
+} */
+/* .carousel-item img{
     
    width: 100%; 
    height: 150px;
    aspect-ratio: 16/9;
    background-position: cover;
-}
+} */
 
 @media(max-width:767px){
     .navbar{
