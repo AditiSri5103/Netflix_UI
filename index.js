@@ -1,40 +1,20 @@
-const apikey="15e383204c1b8a09dbfaaa4c01ed7e17";
-const apiEndpoint="https://api.themoviedb.org/3";
-const apiPaths={
-    fetchAllCategories: apiEndpoint+"/genre/movie/list?api_key="+apikey,
-    fetchMoviesList: (id)=>apiEndpoint+"/discover/movie?api_key="+apikey+"&with_genres="+id
+let left=document.getElementById("left");
+let right=document.getElementById("right");
+let currtranslate=0;
+
+left.addEventListener("click",left_swipe);
+right.addEventListener("click",right_swipe);
+
+function left_swipe(){
+    
+    if(currtranslate-100>=0)
+    {currtranslate-=100;
+    document.getElementById("carousel-list").style.transform="translateX(-"+currtranslate+"%)";
 }
-
-    function init(){
-    fetchAndBuildAllSections();
 }
-
-function fetchAndBuildAllSections(){
-    fetch(apiPaths.fetchAllCategories)
-        .then(res => res.json())
-        .then(res=>{
-            const categories=res.genres;
-            if (Array.isArray(categories)&&categories.length){
-                categories.forEach(category => {
-                    fetchAndbuildMovieSection(apiPaths.fetchMoviesList(category.id),category);
-
-                });
-            }
-            // console.table(categories);
-        })
-        .catch(err=>console.error(err));
-
+function right_swipe(){
+    currtranslate+=100;
+    if(currtranslate>200)
+    currtranslate=0;
+    document.getElementById("carousel-list").style.transform="translateX(-"+currtranslate+"%)";
 }
-function fetchAndbuildMovieSection(fetchUrl,category){
-    console.log(fetchUrl,category);
-    fetch(fetchUrl)
-    .then(res => res.json())
-    .then(res => {
-        console.table(res.results);
-    })
-    .catch(err=>console.error(err))
-}
-
-window.addEventListener('load',function(){
-init();
-})
