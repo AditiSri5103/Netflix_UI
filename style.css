@@ -18,6 +18,7 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .menu {
@@ -167,26 +168,29 @@ body {
     z-index: -5;
     left: 0;
     top: 0;
+    overflow: hidden;
 }
 
 .video-container video {
-    min-width: 710px;
-    min-height: 560px;
+    /* min-width: 710px;
+    min-height: 560px; */
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    
 }
 
 .overlay {
     width: 100%;
     height: 100vh;
-    min-width: 710px;
-    min-height: 560px;
+    /* min-width: 710px;
+    min-height: 560px; */
     background-color: #000;
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0.7;
+   
 }
 
 .carousel {
@@ -296,4 +300,95 @@ body {
 
     }
 
+}
+
+@media(max-width:500px){
+.video-container{
+    overflow: hidden;
+}
+}
+
+@media (max-width: 767px) {
+    .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        display: none; /* hide by default */
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu .nav-items {
+        padding: 10px 0;
+    }
+
+    .togglebtn {
+        display: block;
+        font-size: 24px;
+        margin-left: auto;
+        padding-right: 15px;
+    }
+}
+@media (max-width: 767px) {
+    .banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner h3 {
+        font-size: 1.2rem;
+    }
+
+    .banner-buttons button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .para {
+        width: 90%;
+        font-size: 14px;
+    }
+}
+@media (max-width: 767px) {
+    .carousel-list img {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    .carousel-list img {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .arrow {
+        font-size: 30px;
+        width: 10%;
+    }
+
+    .arrow:hover {
+        font-size: 40px;
+    }
+}
+@media (max-width: 767px) {
+    .logo {
+        max-width: 80px;
+    }
+
+    .navbar-right img {
+        width: 30px;
+        height: 30px;
+    }
 }

@@ -11,6 +11,12 @@
     
 
 </head>
+<script>
+    function toggleMenu() {
+    document.getElementById('navbar').classList.toggle('active');
+}
+
+</script>
 
 <body>
 
@@ -38,7 +44,8 @@
                     <img src="images/girl-dp.jpg " width="40px" height="40px">
                     <span class="fa1 fa-caret-down fa" aria-hidden="true"></span>
                 
-           
+                    <div class="togglebtn" onclick="toggleMenu()">&#9776;</div>
+
             <!-- <div class="togglebtn" onclick="toggle()">&#9776</div> -->
         </div>
     </div>
@@ -100,5 +107,7 @@
     
    <script  src="index.js"></script> 
 </body>
+
+
 
 </html>
